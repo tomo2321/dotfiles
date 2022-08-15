@@ -4,8 +4,6 @@
 [core]
 	pager = less -F -X
 	editor = vim
-[safe]
-	directory = %(prefix)///salmon/user/hakotani/ws/mi202209
 [alias]
 	st = status
 	br = branch
