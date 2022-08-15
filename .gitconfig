@@ -1,0 +1,14 @@
+[user]
+	name = hakot
+	email = tomo2321@gmail.com
+[core]
+	pager = less -F -X
+	editor = vim
+[safe]
+	directory = %(prefix)///salmon/user/hakotani/ws/mi202209
+[alias]
+	st = status
+	br = branch
+	co = checkout
+[init]
+	defaultBranch = main
