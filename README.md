@@ -3,5 +3,6 @@
 ```bash
 cd ~
 git clone git@github.com:tomo2321/dotfiles.git
+bash setup.sh
 ```
 
