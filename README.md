@@ -1,8 +1,8 @@
 # Installtion
 
 ```bash
-cd ~
-git clone git@github.com:tomo2321/dotfiles.git
+git clone git@github.com:tomo2321/dotfiles.git ~/dotfiles
+cd ~/dotfiles
 bash setup.sh
 ```
 
