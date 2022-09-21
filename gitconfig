@@ -9,5 +9,6 @@
 	st = status
 	br = branch
 	co = checkout
+	sw = switch
 [init]
 	defaultBranch = main
