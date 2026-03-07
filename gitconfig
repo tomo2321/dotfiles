@@ -1,5 +1,5 @@
 [user]
-	name = hakot
+	name = tomo2
 	email = tomo2321@gmail.com
 [core]
 	pager = less -F -X
@@ -9,7 +9,12 @@
 	st = status
 	br = branch
 	co = checkout
+	d = diff
+	ds = diff --staged
 	sw = switch
 	ls = ls-files
+	coma = !git show-ref --verify --quiet refs/heads/main && git checkout main || git checkout master
 [init]
 	defaultBranch = main
+[ghq]
+  root = /Users/tomo2/ws/
