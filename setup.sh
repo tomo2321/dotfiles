@@ -18,8 +18,8 @@ ln -s $DOTFILES_DIR/.zprofile ~/.zprofile
 ln -s $DOTFILES_DIR/.zshrc ~/.zshrc
 ln -s $DOTFILES_DIR/vimrc ~/.vimrc
 ln -s $DOTFILES_DIR/vim ~/.vim
-ln -s $DOTFILES_DIR/gitconfig ~/.gitconfig
-ln -s $DOTFILES_DIR/global-gitignore ~/.gitignore
+ln -s $DOTFILES_DIR/git/.gitconfig ~/.gitconfig
+ln -s $DOTFILES_DIR/git/.gitignore ~/.gitignore
 if [ "$(which -a nvim)" ]; then
   mkdir -p ~/.config/nvim
   ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim

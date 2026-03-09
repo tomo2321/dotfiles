@@ -16,5 +16,20 @@
 	coma = !git show-ref --verify --quiet refs/heads/main && git checkout main || git checkout master
 [init]
 	defaultBranch = main
+[commit]
+  verbose = true
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+  compactionHeuristic = true
+[color]
+  ui = auto
+  status = auto
+  branch = auto
+  grep = auto
+  diff = auto
+  diff-highlight = auto
 [ghq]
-  root = /Users/tomo2/ws/
+  root = ~/ws
