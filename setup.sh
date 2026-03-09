@@ -1,14 +1,11 @@
 #!/bin/bash
 
-chsh -s /bin/bash
-apt update
-apt install -y --no-install-recommends \
-  git \
-  neovim \
-  screen \
-  tmux
+if [[ "$OSTYPE" != "darwin"* ]]; then
+  echo "Warning: This script is intended for macOS only."
+  exit 1
+fi
 
-mkdir ~/tmp
+chsh -s /bin/bash
 
 ln -s ~/dotfiles/bashrc ~/.bashrc
 ln -s ~/dotfiles/vimrc ~/.vimrc
