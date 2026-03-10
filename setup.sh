@@ -17,8 +17,11 @@ DOTFILES_DIR="$(cd $(dirname "$0") && pwd)"
 XDG_CONFIG_HOME="$HOME/.config"
 mkdir -p $XDG_CONFIG_HOME
 
-ln -s $DOTFILES_DIR/.zprofile ~/.zprofile
-ln -s $DOTFILES_DIR/.zshrc ~/.zshrc
+ln -s $DOTFILES_DIR/zsh/.zshenv ~/.zshenv
+ln -s $DOTFILES_DIR/zsh/.zprofile ~/.zprofile
+ln -s $DOTFILES_DIR/zsh/.zshrc ~/.zshrc
+ln -s $DOTFILES_DIR/zsh/.zlogin ~/.zlogin
+
 ln -s $DOTFILES_DIR/vimrc ~/.vimrc
 ln -s $DOTFILES_DIR/vim ~/.vim
 ln -s $DOTFILES_DIR/git/.gitconfig ~/.gitconfig

@@ -3,6 +3,7 @@ export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/Library/Android/sdk/emulator"
 export PATH="$PATH:/Users/tomo2/Library/Application Support/JetBrains/Toolbox/scripts"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.rd/bin"
 
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"

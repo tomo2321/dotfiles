@@ -1,0 +1,5 @@
+eval "$(brew shellenv)"
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+eval "$(uv generate-shell-completion zsh)"
+eval "$(mise activate zsh)"
