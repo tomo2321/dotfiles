@@ -1,3 +1,6 @@
 alias g='git'
 alias mx='tmuxinator'
 alias ff='fzf'
+alias ls='ls -F --color=auto'
+alias la='ls -A'
+alias ll='la -l'
