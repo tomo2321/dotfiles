@@ -14,6 +14,7 @@
 	sw = switch
 	ls = ls-files
 	coma = !git show-ref --verify --quiet refs/heads/main && git checkout main || git checkout master
+  poh = push origin head
 [init]
 	defaultBranch = main
 [commit]
