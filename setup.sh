@@ -31,3 +31,13 @@ if [ "$(which -a nvim)" ]; then
   mkdir -p ~/.config/nvim
   ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
 fi
+
+if ! command -v brew &>/dev/null; then
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo "Homebrew is already installed."
+fi
+
+echo "Installing Homebrew packages from Brewfile..."
+brew bundle --file=$DOTFILES_DIR/homebrew/Brewfile
