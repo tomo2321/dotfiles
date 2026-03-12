@@ -28,6 +28,7 @@ mkdir -p $TMUX_CONFIG_DIR
 ln -s $DOTFILES_DIR/tmux/.tmux.conf $TMUX_CONFIG_DIR/tmux.conf
 ln -s $DOTFILES_DIR/tmux/.tmux.conf.local $TMUX_CONFIG_DIR/tmux.conf.local
 
+ln -s $DOTFILES_DIR/.editorconfig ~/.editorconfig
 ln -s $DOTFILES_DIR/vimrc ~/.vimrc
 ln -s $DOTFILES_DIR/vim ~/.vim
 ln -s $DOTFILES_DIR/git/.gitconfig ~/.gitconfig
