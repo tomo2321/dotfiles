@@ -1,0 +1,25 @@
+[*.sh]
+# Keep function braces on the same line (POSIX style)
+shell_variant = posix
+
+# Indent size of 2 spaces
+indent_style = space
+indent_size = 2
+
+# Indent switch cases
+switch_case_indent = true
+
+# Simplify code by removing redundant parentheses or braces
+simplify_code = true
+
+# Binary operators like && and || will start on the next line
+binary_next_line = true
+
+# Remove any whitespace characters preceding a newline
+trim_trailing_whitespace = true
+
+# Add spaces after redirect operators (e.g., > /dev/null instead of >/dev/null)
+space_redirects = true
+
+# Ensure a newline at the end of the file (General best practice)
+insert_final_newline = true
