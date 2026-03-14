@@ -22,8 +22,8 @@ trim_trailing_whitespace = true
 
 # Specific settings for Shell scripts (shfmt)
 [*.sh]
-# Keep function braces on the same line (shfmt: -p)
-shell_variant = posix
+# Use Bash as the shell dialect for formatting (shfmt: -ln=bash)
+shell_variant = bash
 # Simplify code by removing redundant syntax (shfmt: -s)
 simplify_code = true
 # Indent switch cases (shfmt: -ci)
