@@ -5,7 +5,7 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
   exit 1
 fi
 
-if ! command -v zsh &>/dev/null; then
+if ! command -v zsh &> /dev/null; then
   echo "Warning: zsh is not installed."
   exit 1
 fi
@@ -29,6 +29,7 @@ ln -s $DOTFILES_DIR/tmux/.tmux.conf $TMUX_CONFIG_DIR/tmux.conf
 ln -s $DOTFILES_DIR/tmux/.tmux.conf.local $TMUX_CONFIG_DIR/tmux.conf.local
 
 ln -s $DOTFILES_DIR/.editorconfig ~/.editorconfig
+ln -s $DOTFILES_DIR/shellcheck/.shellcheckrc $XDG_CONFIG_HOME/shellcheckrc
 ln -s $DOTFILES_DIR/vimrc ~/.vimrc
 ln -s $DOTFILES_DIR/vim ~/.vim
 ln -s $DOTFILES_DIR/git/.gitconfig ~/.gitconfig
@@ -39,7 +40,7 @@ if [ "$(which -a nvim)" ]; then
   ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
 fi
 
-if ! command -v brew &>/dev/null; then
+if ! command -v brew &> /dev/null; then
   echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else

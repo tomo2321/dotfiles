@@ -1,0 +1,50 @@
+# ==============================================================================
+# ShellCheck Configuration File
+# Matches project standards defined in .editorconfig (POSIX, 2-space indent, etc.)
+# ==============================================================================
+
+# Default shell dialect.
+# Matches 'shell_variant = posix' in .editorconfig.
+# Options: bash, sh, ksh, dash
+shell=bash
+
+# Minimum severity level to report.
+# 'style' covers semantic issues, 'info' adds aesthetic suggestions.
+severity=style
+
+# Allow ShellCheck to follow 'source' statements even if the file is outside
+# the current directory. Essential for modular scripts.
+external-sources=true
+
+# Specify directories to search for sourced files.
+source-path=SCRIPTDIR:.
+
+# ------------------------------------------------------------------------------
+# Consistency & Style Rules
+# ------------------------------------------------------------------------------
+
+# Enable optional checks that are not on by default.
+# 'quote-safe-variables': Suggests quoting variables even when not strictly
+# required (Good for stability).
+# 'require-variable-braces': Suggests ${var} instead of $var (Clearer boundaries).
+enable=quote-safe-variables,require-variable-braces
+
+# ------------------------------------------------------------------------------
+# Rule Exclusions (SCxxxx)
+# ------------------------------------------------------------------------------
+
+# You can disable specific rules if they conflict with your workflow.
+# SC2034: Unused variables (Useful to disable in library/config files).
+# SC1090: Can't follow non-constant source. Use if you source dynamic paths.
+# exclude=SC1090,SC2034
+
+# ------------------------------------------------------------------------------
+# Integration Settings
+# ------------------------------------------------------------------------------
+
+# Colorize the output (auto, always, never).
+color=auto
+
+# Output format (tty, gcc, checkstyle, json).
+# 'gcc' is often easier for IDEs/CI to parse.
+format=tty
