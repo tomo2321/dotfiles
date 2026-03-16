@@ -30,6 +30,7 @@ ln -s $DOTFILES_DIR/tmux/.tmux.conf.local $TMUX_CONFIG_DIR/tmux.conf.local
 
 ln -s $DOTFILES_DIR/.editorconfig ~/.editorconfig
 ln -s $DOTFILES_DIR/shellcheck/.shellcheckrc $XDG_CONFIG_HOME/shellcheckrc
+ln -s $DOTFILES_DIR/dprint $XDG_CONFIG_HOME/dprint
 ln -s $DOTFILES_DIR/vimrc ~/.vimrc
 ln -s $DOTFILES_DIR/vim ~/.vim
 ln -s $DOTFILES_DIR/git/.gitconfig ~/.gitconfig
