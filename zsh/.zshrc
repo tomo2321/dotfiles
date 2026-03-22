@@ -3,11 +3,11 @@
 
 ZSHRC_REAL_DIR="${${(%):-%N}:A:h}"
 
+autoload -Uz compinit; compinit
+
 [ -f "$ZSHRC_REAL_DIR/export.zsh" ] && source "$ZSHRC_REAL_DIR/export.zsh"
 [ -f "$ZSHRC_REAL_DIR/alias.zsh" ] && source "$ZSHRC_REAL_DIR/alias.zsh"
 [ -f "$ZSHRC_REAL_DIR/function.zsh" ] && source "$ZSHRC_REAL_DIR/function.zsh"
 [ -f "$ZSHRC_REAL_DIR/eval.zsh" ] && source "$ZSHRC_REAL_DIR/eval.zsh"
 [ -f "$ZSHRC_REAL_DIR/set.zsh" ] && source "$ZSHRC_REAL_DIR/set.zsh"
 [ -f "$ZSHRC_REAL_DIR/bindkey.zsh" ] && source "$ZSHRC_REAL_DIR/bindkey.zsh"
-
-autoload -Uz compinit; compinit
