@@ -1,4 +1,6 @@
 swap/*
 !swap/.gitkeep
+plugged/*
+!plugged/.gitkeep
 .netrwhist
 viminfo

@@ -1,5 +1,13 @@
 syntax on
 
+" ============================================================================
+" Global Leader Definition (Must be defined first)
+" ============================================================================
+let mapleader = "\<Space>"
+
+" ============================================================================
+" Basic Settings
+" ============================================================================
 set shell=/bin/bash
 set shiftwidth=4
 set tabstop=4
@@ -7,6 +15,9 @@ set expandtab
 set textwidth=0
 set autoindent
 set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 set clipboard=unnamed
 set number relativenumber
 set ruler
@@ -15,5 +26,238 @@ set backspace=indent,eol,start
 set directory=$HOME/.vim/swap//
 set viminfo+=n~/.vim/viminfo
 set wildmenu
+set signcolumn=yes
+set hidden
+set timeoutlen=3000
+set ttimeoutlen=50
 
-let mapleader = "\<space>"
+" ============================================================================
+" General Mappings
+" ============================================================================
+nnoremap <Leader>w :w<CR>
+" Close current buffer (VSCode-like close file)
+nnoremap <Leader>q :Bdelete<CR>
+" Close current window (tmux pane)
+nnoremap <Leader>Q :q<CR>
+nnoremap <Leader>wq :wq<CR>
+
+" Window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Environment variables for FZF
+let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --exclude .git'
+
+" ============================================================================
+" Plugins
+" ============================================================================
+call plug#begin(expand('<sfile>:h') . '/plugged')
+
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'liuchengxu/vim-which-key'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'moll/vim-bbye'
+
+call plug#end()
+
+" ============================================================================
+" Plugin Configurations
+" ============================================================================
+
+" --- NERDTree ---
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeIgnore = ['\.pyc$', '__pycache__$', '\.git$']
+let g:NERDTreeWinSize = 35
+let g:NERDTreeWinPos = "right"
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" --- Airline ---
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" ============================================================================
+" Leader Key Group Mappings (vim-which-key friendly)
+" ============================================================================
+
+" Explorer (<leader>e)
+nnoremap <Leader>ee :NERDTreeToggle<CR>
+nnoremap <Leader>ef :NERDTreeFocus<CR>
+
+" Find (<leader>f)
+nnoremap <Leader>ff :GFiles<CR>
+nnoremap <Leader>fF :Files<CR>
+nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>fr :History<CR>
+nnoremap <Leader>ft :BTags<CR>
+
+" VSCode-like Quick Open
+nnoremap <Leader>p :GFiles<CR>
+
+" Search (<leader>s)
+nnoremap <Leader>sg :Rg<CR>
+nnoremap <Leader>sb :BLines<CR>
+
+" Buffer (<leader>b)
+nnoremap <Leader>bb :Buffers<CR>
+nnoremap <Leader>bd :Bdelete<CR>
+nnoremap <Leader>bn :bnext<CR>
+nnoremap <Leader>bp :bprevious<CR>
+
+" Buffer navigation (overwrite default screen jump)
+nnoremap H :bprevious<CR>
+nnoremap L :bnext<CR>
+
+" Open buffer in splits/tabs
+nnoremap <Leader>bs :split \| buffer #<CR>
+nnoremap <Leader>bv :vsplit \| buffer #<CR>
+nnoremap <Leader>bt :tabedit \| buffer #<CR>
+
+" Window (<leader>w)
+nnoremap <Leader>wh <C-w>h
+nnoremap <Leader>wj <C-w>j
+nnoremap <Leader>wk <C-w>k
+nnoremap <Leader>wl <C-w>l
+nnoremap <Leader>ws :split<CR>
+nnoremap <Leader>wv :vsplit<CR>
+nnoremap <Leader>wc :close<CR>
+
+" Tab (<leader>t)
+nnoremap <Leader>tn :tabnext<CR>
+nnoremap <Leader>tp :tabprevious<CR>
+nnoremap <Leader>tc :tabnew<CR>
+syntax on
+
+" ============================================================================
+" Global Leader Definition (Must be defined first)
+" ============================================================================
+let mapleader = "\<Space>"
+
+" ============================================================================
+" Basic Settings
+" ============================================================================
+set shell=/bin/bash
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set textwidth=0
+set autoindent
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set clipboard=unnamed
+set number relativenumber
+set ruler
+set scrolloff=5
+set backspace=indent,eol,start
+set directory=$HOME/.vim/swap//
+set viminfo+=n~/.vim/viminfo
+set wildmenu
+set signcolumn=yes
+set hidden
+set timeoutlen=3000
+set ttimeoutlen=50
+
+" ============================================================================
+" General Mappings
+" ============================================================================
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :Bdelete<CR>   " Close current buffer (VSCode-like close file)
+nnoremap <Leader>Q :q<CR>         " Close current window (tmux pane)
+nnoremap <Leader>wq :wq<CR>
+
+" Window navigation (C-l also clears search highlights)
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> :nohlsearch<CR><C-w>l
+
+" Environment variables for FZF
+let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --exclude .git'
+
+" ============================================================================
+" Plugins
+" ============================================================================
+call plug#begin(expand('<sfile>:h') . '/plugged')
+
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'liuchengxu/vim-which-key'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'moll/vim-bbye'
+
+call plug#end()
+
+" ============================================================================
+" Plugin Configurations
+" ============================================================================
+
+" --- NERDTree ---
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeIgnore = ['\.pyc$', '__pycache__$', '\.git$']
+let g:NERDTreeWinSize = 35
+let g:NERDTreeWinPos = "right"
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" --- Airline ---
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" ============================================================================
+" Leader Key Group Mappings (vim-which-key friendly)
+" ============================================================================
+
+" Explorer (<leader>e)
+nnoremap <Leader>ee :NERDTreeToggle<CR>
+nnoremap <Leader>ef :NERDTreeFocus<CR>
+
+" Find (<leader>f)
+nnoremap <Leader>ff :GFiles<CR>
+nnoremap <Leader>fF :Files<CR>
+nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>fr :History<CR>
+nnoremap <Leader>ft :BTags<CR>
+
+" VSCode-like Quick Open
+nnoremap <Leader>p :GFiles<CR>
+
+" Search (<leader>s)
+nnoremap <Leader>sg :Rg<CR>
+nnoremap <Leader>sb :BLines<CR>
+
+" Buffer (<leader>b)
+nnoremap <Leader>bb :Buffers<CR>
+nnoremap <Leader>bd :Bdelete<CR>
+nnoremap <Leader>bn :bnext<CR>
+nnoremap <Leader>bp :bprevious<CR>
+
+" Buffer navigation (overwrite default screen jump)
+nnoremap H :bprevious<CR>
+nnoremap L :bnext<CR>
+
+" Open buffer in splits/tabs
+nnoremap <Leader>bs :split \| buffer #<CR>
+nnoremap <Leader>bv :vsplit \| buffer #<CR>
+nnoremap <Leader>bt :tabedit \| buffer #<CR>
+
+" Window (<leader>w)
+nnoremap <Leader>wh <C-w>h
+nnoremap <Leader>wj <C-w>j
+nnoremap <Leader>wk <C-w>k
+nnoremap <Leader>wl <C-w>l
+nnoremap <Leader>ws :split<CR>
+nnoremap <Leader>wv :vsplit<CR>
+nnoremap <Leader>wc :close<CR>
+
+" Tab (<leader>t)
+nnoremap <Leader>tn :tabnext<CR>
+nnoremap <Leader>tp :tabprevious<CR>
+nnoremap <Leader>tc :tabnew<CR>
+nnoremap <Leader>td :tabclose<CR>
